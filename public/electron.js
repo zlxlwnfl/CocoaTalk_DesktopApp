@@ -1,3 +1,5 @@
+const {app, BrowserWindow, Menu} = require('electron');
+const path = require('path');
 const url = require('url');
 
 function createWindow() {
@@ -11,6 +13,8 @@ function createWindow() {
         protocol: 'file:',
         slashes: true
     });
+
+    Menu.setApplicationMenu(null);
 
     win.loadURL(startUrl);
 }
